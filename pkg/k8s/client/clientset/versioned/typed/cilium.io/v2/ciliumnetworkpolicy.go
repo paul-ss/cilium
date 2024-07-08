@@ -168,15 +168,15 @@ func (c *ciliumNetworkPolicies) DeleteCollection(ctx context.Context, opts v1.De
 
 // Patch applies the patch and returns the patched ciliumNetworkPolicy.
 func (c *ciliumNetworkPolicies) Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts v1.PatchOptions, subresources ...string) (result *v2.CiliumNetworkPolicy, err error) {
-	result = &v2.CiliumNetworkPolicy{}
-	err = c.client.Patch(pt).
-		Namespace(c.ns).
-		Resource("ciliumnetworkpolicies").
-		Name(name).
-		SubResource(subresources...).
-		VersionedParams(&opts, scheme.ParameterCodec).
-		Body(data).
-		Do(ctx).
-		Into(result)
+	// result = &v2.CiliumNetworkPolicy{}
+	// err = c.client.Patch(pt).
+	// 	Namespace(c.ns).
+	// 	Resource("ciliumnetworkpolicies").
+	// 	Name(name).
+	// 	SubResource(subresources...).
+	// 	VersionedParams(&opts, scheme.ParameterCodec).
+	// 	Body(data).
+	// 	Do(ctx).
+	// 	Into(result)
 	return
 }

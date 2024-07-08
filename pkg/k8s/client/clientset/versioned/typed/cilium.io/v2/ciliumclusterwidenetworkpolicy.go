@@ -158,14 +158,14 @@ func (c *ciliumClusterwideNetworkPolicies) DeleteCollection(ctx context.Context,
 
 // Patch applies the patch and returns the patched ciliumClusterwideNetworkPolicy.
 func (c *ciliumClusterwideNetworkPolicies) Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts v1.PatchOptions, subresources ...string) (result *v2.CiliumClusterwideNetworkPolicy, err error) {
-	result = &v2.CiliumClusterwideNetworkPolicy{}
-	err = c.client.Patch(pt).
-		Resource("ciliumclusterwidenetworkpolicies").
-		Name(name).
-		SubResource(subresources...).
-		VersionedParams(&opts, scheme.ParameterCodec).
-		Body(data).
-		Do(ctx).
-		Into(result)
+	// result = &v2.CiliumClusterwideNetworkPolicy{}
+	// err = c.client.Patch(pt).
+	// 	Resource("ciliumclusterwidenetworkpolicies").
+	// 	Name(name).
+	// 	SubResource(subresources...).
+	// 	VersionedParams(&opts, scheme.ParameterCodec).
+	// 	Body(data).
+	// 	Do(ctx).
+	// 	Into(result)
 	return
 }
